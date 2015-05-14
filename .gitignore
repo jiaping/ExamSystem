@@ -41,3 +41,16 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+#remove folder
+ConsoleApplication1111/
+ExamServerService/
+TrailDeflate/
+
+DebugBin/
+bin/
+obj/
+Packages/
+
+
+

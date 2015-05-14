@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="JP.ExamSystem.SetQuestion.Models.TestQuestionListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="200">
+    <DockPanel >
+        <GroupBox Header="试题列表" Margin="0,0,0,20" Width="200"  >
+            <Grid Margin="0">
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="219*"/>
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+
+                <ListView ItemsSource="{Binding TestQuestionNodes}" SelectedItem="{Binding CurrentNode}"  BorderBrush="{x:Null}" Margin="0">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" >
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition  Width="20*"></ColumnDefinition>
+                                        <ColumnDefinition  Width="80*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox  IsChecked="{Binding IsSelected}" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                                    <Label Content="{Binding Id}" Grid.Column="1"/>
+                                </Grid>
+                                <!--<Label  Content="{Binding Description}" />-->
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button Name="TqSelect" Content="选择" HorizontalAlignment="Left" Margin="0,9.6,0,0" VerticalAlignment="Top" Width="53" Grid.Row="1"/>
+                <Button Name="TqSelectSave"  Content="保存选择" HorizontalAlignment="Left" Margin="58,9.6,0,0" VerticalAlignment="Top" Width="61" Grid.Row="1"/>
+                <Button Name="Refresh" Content="刷新" HorizontalAlignment="Left" Margin="134,9.6,0,0" VerticalAlignment="Top" Width="43" Grid.Row="1"/>
+            </Grid>
+        </GroupBox>
+
+
+    </DockPanel>
+</UserControl>

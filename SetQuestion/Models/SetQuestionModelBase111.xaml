@@ -1,0 +1,32 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="JP.ExamSystem.SetQuestion.SetQuestionModel.SetQuestionModelBase111" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35px"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="30px"/>
+        </Grid.RowDefinitions>
+        <Grid Margin="0" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100px"/>
+                <ColumnDefinition Width="100*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" Margin="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35px"/>
+                    <RowDefinition Height="35px"/>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="10*"/>
+                </Grid.RowDefinitions>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</UserControl>
