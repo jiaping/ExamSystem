@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Caliburn.Micro;
+using Xceed.Wpf.DataGrid.Converters;
 
 namespace JP.ExamSystem.SetQuestion.Models
 {
@@ -18,13 +19,19 @@ namespace JP.ExamSystem.SetQuestion.Models
     /// <typeparam name="C">列表项类</typeparam>
     public class TestQuestionListViewModel:Screen
     {
+        /// <summary>
+        /// 用于传递试题筛选标记
+        /// </summary>
+        private string _tqFilterTag = string.Empty;
           public TestQuestionListViewModel()
         {
             _tvTestQuestionNodes = new ObservableCollection<TestQuestionTreeNode>();
             //Model = DataPortal.Fetch<T>();
         }
-        public TestQuestionListViewModel(string filter)
+        public TestQuestionListViewModel(string tqFilterTag)
         {
+            this._tqFilterTag = tqFilterTag;
+            _tvTestQuestionNodes = new ObservableCollection<TestQuestionTreeNode>();
             //Model = DataPortal.Fetch<T>(mxID);
         }
         //public TestQuestionListViewModel(T model)
@@ -40,10 +47,26 @@ namespace JP.ExamSystem.SetQuestion.Models
         {
             get { return _tvTestQuestionNodes; }
         }
+        /// <summary>
+        /// 获取试题列表
+        /// </summary>
+        public void GetTqList()
+        {
+            _tvTestQuestionNodes.Clear();
+            var list = ServiceHelper.GetTqList(this._tqFilterTag);
+            foreach (var item in list)
+            {
+                _tvTestQuestionNodes.Add(new TestQuestionTreeNode() { Id = item });
+            }
+            NotifyOfPropertyChange();
+        }
+        /// <summary>
+        /// 刷新列表
+        /// </summary>
         public void Refresh()
         {
             _tvTestQuestionNodes.Clear();
-           var list = ServiceHelper.GetTqList("111%");
+           var list = ServiceHelper.GetTqList(this._tqFilterTag);
             foreach (var item in list)
             {
                 _tvTestQuestionNodes.Add(new TestQuestionTreeNode() {Id = item});

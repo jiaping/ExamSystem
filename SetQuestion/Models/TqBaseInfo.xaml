@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="JP.ExamSystem.SetQuestion.Models.TqBaseInfo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="30" d:DesignWidth="600">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*" MinWidth="100"/>
+            <ColumnDefinition Width="20*" MinWidth="100"/>
+            <ColumnDefinition Width="20*" MinWidth="100"/>
+            <ColumnDefinition Width="20*" MinWidth="100"/>
+            <ColumnDefinition Width="20*" MinWidth="100"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Margin="10,5,0,0" TextWrapping="Wrap" Text="试题号：" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBox x:Name="TqIdBox" HorizontalAlignment="Left" Height="23" Margin="63,2,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="47"/>
+        <TextBlock  Margin="10,5,0,9.4" TextWrapping="Wrap" Text="难度：" VerticalAlignment="Center" Grid.Column="1" HorizontalAlignment="Left"/>
+        <TextBox x:Name="DifficultyBox" HorizontalAlignment="Left" Height="23" Margin="63,5,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="47" Grid.Column="1"/>
+        <TextBlock Margin="10,6,0,8.4" TextWrapping="Wrap" Text="修订者：" VerticalAlignment="Center" Grid.Column="2" HorizontalAlignment="Left"/>
+        <TextBox x:Name="RedactorBox" HorizontalAlignment="Left" Height="23" Margin="63,5,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="47" Grid.Column="2"/>
+        <TextBlock Margin="10,5,0,9.4" TextWrapping="Wrap" Text="修订时间：" VerticalAlignment="Center" Grid.Column="3" Width="51" HorizontalAlignment="Left"/>
+        <TextBox x:Name="ReviseTimeBox" HorizontalAlignment="Left" Height="23" Margin="61,4,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="49" Grid.Column="3"/>
+    </Grid>
+</UserControl>

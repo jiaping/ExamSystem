@@ -52,5 +52,8 @@ bin/
 obj/
 Packages/
 
+#remove files
+*.suo
+
 
 

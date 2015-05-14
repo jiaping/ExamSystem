@@ -6,18 +6,40 @@ namespace JP.ExamSystem.SetQuestion.Models
 {
     public class SetQuestionModelBase:Screen
     {
+        /// <summary>
+        /// 用于传递试题筛选标记
+        /// </summary>
+        private readonly string _tqFilterTag = string.Empty;
+        /// <summary>
+        /// 当前显示、修改、新增的试题ID
+        /// </summary>
+        private string _currentTqID = string.Empty;
+
         public SetQuestionModelBase()
         {
         }
+        public SetQuestionModelBase(string tqFilter)
+        {
+            this._tqFilterTag = tqFilter;
+        }
+
+        protected override void OnViewLoaded(object view)
+        {
+            _vmTestQuestionListView.Refresh();
+        }
+
         #region TestQuestionListViewModel
-        private TestQuestionListViewModel _vmtestQuestionListView;
+        /// <summary>
+        /// 模块中的试题树形列表对象
+        /// </summary>
+        private TestQuestionListViewModel _vmTestQuestionListView;
 
         public TestQuestionListViewModel VmTestQuestionListView
         {
             get {
-                return _vmtestQuestionListView ??
-                       (_vmtestQuestionListView =
-                           new TestQuestionListViewModel());
+                return _vmTestQuestionListView ??
+                       (_vmTestQuestionListView =
+                           new TestQuestionListViewModel(_tqFilterTag));
             }
         }
         #endregion

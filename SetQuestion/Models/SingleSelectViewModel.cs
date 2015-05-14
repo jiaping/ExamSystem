@@ -9,6 +9,12 @@ namespace JP.ExamSystem.SetQuestion.Models
 {
     public class SingleSelectViewModel:SetQuestionModelBase
     {
+        public SingleSelectViewModel()
+            :base("111%") 
+        {
 
+        }
+
+    
     }
 }
