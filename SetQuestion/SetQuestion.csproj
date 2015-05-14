@@ -95,9 +95,6 @@
     <Compile Include="MainViewModel.cs" />
     <Compile Include="Models\OperationViewModel.cs" />
     <Compile Include="Models\TqBaseInfo.cs" />
-    <Compile Include="Models\TqBaseInfo.xaml.cs">
-      <DependentUpon>TqBaseInfo.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ServiceHelper.cs" />
     <Compile Include="Models\SetQuestionModelBase.cs" />
     <Compile Include="Models\SingleSelectViewModel.cs" />
