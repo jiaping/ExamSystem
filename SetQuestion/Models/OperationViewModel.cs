@@ -10,5 +10,12 @@ namespace JP.ExamSystem.SetQuestion.Models
             if (one.ActiveItem!=null)
                 one.DeactivateItem(one.ActiveItem,true);
         }
+        /// <summary>
+        /// 添加试题
+        /// </summary>
+        public void btnAdd()
+        {
+            
+        }
     }
 }

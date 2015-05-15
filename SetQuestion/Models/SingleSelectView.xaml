@@ -27,7 +27,7 @@
                     <RowDefinition Height="40*"/>
                     <RowDefinition Height="10*"/>
                 </Grid.RowDefinitions>
-                
+                <ContentControl x:Name="VmTqBaseInfo"  Grid.Row="0"/>
             </Grid>
             <GridSplitter Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="0,59,0,0" VerticalAlignment="Top" Width="5"/>
         </Grid>

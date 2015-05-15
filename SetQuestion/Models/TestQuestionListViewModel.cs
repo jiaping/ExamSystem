@@ -63,15 +63,9 @@ namespace JP.ExamSystem.SetQuestion.Models
         /// <summary>
         /// 刷新列表
         /// </summary>
-        public void Refresh()
+        public void ReGetTqList()
         {
-            _tvTestQuestionNodes.Clear();
-           var list = ServiceHelper.GetTqList(this._tqFilterTag);
-            foreach (var item in list)
-            {
-                _tvTestQuestionNodes.Add(new TestQuestionTreeNode() {Id = item});
-            }
-            NotifyOfPropertyChange();
+           GetTqList();
         }
 
         #endregion
@@ -95,6 +89,8 @@ namespace JP.ExamSystem.SetQuestion.Models
             {
                 _currentNode = value;
                 //RaisePropertyChangedEventImmediately("CurrentNode");
+                NotifyOfPropertyChange("CurrentNode");
+                
             }
         }
         /// <summary>

@@ -6,7 +6,7 @@ namespace JP.ExamSystem.SetQuestion.Models
     /// 具体显示试题相关基本信息
     /// 试题ID、修订者、难度、修订时间、使用情况
     /// </summary>
-    public class TqBaseInfo : Screen
+    public class TqBaseInfoViewModel : Screen
     {
     }
 }

@@ -94,7 +94,7 @@
     <Compile Include="Command\MainMenuHelper.cs" />
     <Compile Include="MainViewModel.cs" />
     <Compile Include="Models\OperationViewModel.cs" />
-    <Compile Include="Models\TqBaseInfo.cs" />
+    <Compile Include="Models\TqBaseInfoViewModel.cs" />
     <Compile Include="ServiceHelper.cs" />
     <Compile Include="Models\SetQuestionModelBase.cs" />
     <Compile Include="Models\SingleSelectViewModel.cs" />
@@ -116,7 +116,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Models\TqBaseInfo.xaml">
+    <Page Include="Models\TqBaseInfViewo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

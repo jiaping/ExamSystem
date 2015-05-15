@@ -33,7 +33,7 @@
                 </ListView>
                 <Button Name="TqSelect" Content="选择" HorizontalAlignment="Left" Margin="0,9.6,0,0" VerticalAlignment="Top" Width="53" Grid.Row="1"/>
                 <Button Name="TqSelectSave"  Content="保存选择" HorizontalAlignment="Left" Margin="58,9.6,0,0" VerticalAlignment="Top" Width="61" Grid.Row="1"/>
-                <Button Name="Refresh" Content="刷新" HorizontalAlignment="Left" Margin="134,9.6,0,0" VerticalAlignment="Top" Width="43" Grid.Row="1"/>
+                <Button Name="ReGetTqList" Content="刷新" HorizontalAlignment="Left" Margin="134,9.6,0,0" VerticalAlignment="Top" Width="43" Grid.Row="1"/>
             </Grid>
         </GroupBox>
 

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="JP.ExamSystem.SetQuestion.Models.TqBaseInfo"
+﻿<UserControl x:Class="JP.ExamSystem.SetQuestion.Models.TqBaseInfoView"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -15,7 +15,7 @@
             <ColumnDefinition Width="20*" MinWidth="100"/>
         </Grid.ColumnDefinitions>
         <TextBlock Margin="10,5,0,0" TextWrapping="Wrap" Text="试题号：" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <TextBox x:Name="TqIdBox" HorizontalAlignment="Left" Height="23" Margin="63,2,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="47"/>
+        <TextBox x:Name="TqIDBox" HorizontalAlignment="Left" Height="23" Margin="63,2,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="47"/>
         <TextBlock  Margin="10,5,0,9.4" TextWrapping="Wrap" Text="难度：" VerticalAlignment="Center" Grid.Column="1" HorizontalAlignment="Left"/>
         <TextBox x:Name="DifficultyBox" HorizontalAlignment="Left" Height="23" Margin="63,5,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="47" Grid.Column="1"/>
         <TextBlock Margin="10,6,0,8.4" TextWrapping="Wrap" Text="修订者：" VerticalAlignment="Center" Grid.Column="2" HorizontalAlignment="Left"/>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using Caliburn.Micro;
+using ThicknessConverter = Xceed.Wpf.DataGrid.Converters.ThicknessConverter;
 
 namespace JP.ExamSystem.SetQuestion.Models
 {
@@ -21,12 +22,28 @@ namespace JP.ExamSystem.SetQuestion.Models
         public SetQuestionModelBase(string tqFilter)
         {
             this._tqFilterTag = tqFilter;
+            
         }
 
         protected override void OnViewLoaded(object view)
         {
-            _vmTestQuestionListView.Refresh();
+            _vmTestQuestionListView.GetTqList();
+            //订阅试题列表的事件，以便能获取选择结点更改的通知
+            this._vmTestQuestionListView.PropertyChanged += _vmTestQuestionListView_PropertyChanged;
         }
+
+        
+        /// <summary>
+        /// 订阅试题列表的事件，以便能获取选择结点更改的通知
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void _vmTestQuestionListView_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            this._currentTqID = this._vmTestQuestionListView.CurrentNode.Id;
+        }
+
+        
 
         #region TestQuestionListViewModel
         /// <summary>
@@ -42,8 +59,18 @@ namespace JP.ExamSystem.SetQuestion.Models
                            new TestQuestionListViewModel(_tqFilterTag));
             }
         }
+
+        #endregion
+        #region TqBaseInfoViewModel
+        
         #endregion
 
+        private TqBaseInfoViewModel _vmTqBaseInfo;
+
+        public TqBaseInfoViewModel VmTqBaseInfo
+        {
+            get { return _vmTqBaseInfo ?? (_vmTqBaseInfo = new TqBaseInfoViewModel()); }
+        }
         #region OperationViewModel
 
         private OperationViewModel _vmOperation;
